@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Radiant So Beautiful</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Italiana&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#1a1029; --bg2:#26173b; --ink:#fbf3ff; --muted:#bfaed3; --line:rgba(255,255,255,.16);
+  --h:330;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:light){
+  :root:not([data-theme="dark"]){--bg:#fdf1f7;--bg2:#f6e4f0;--ink:#2a1236;--muted:#6f5580;--line:rgba(42,18,54,.18)}
+}
+:root[data-theme="light"]{--bg:#fdf1f7;--bg2:#f6e4f0;--ink:#2a1236;--muted:#6f5580;--line:rgba(42,18,54,.18)}
+:root[data-theme="dark"]{--bg:#1a1029;--bg2:#26173b;--ink:#fbf3ff;--muted:#bfaed3;--line:rgba(255,255,255,.16)}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:'Figtree',system-ui,sans-serif;line-height:1.6;overflow-x:hidden}
+.glow{position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden;
+  background:radial-gradient(circle at 80% 85%, hsl(calc(var(--h) + 50) 90% 65% / .28), transparent 40%)}
+.orb{position:absolute;left:0;top:0;width:80vmax;height:80vmax;margin:-40vmax 0 0 -40vmax;border-radius:50%;
+  background:radial-gradient(circle, hsl(var(--h) 95% 68% / .55), transparent 62%);
+  will-change:transform;transform:translate3d(50vw,38vh,0)}
+main{position:relative;z-index:1}
+.hero{min-height:100svh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:2rem 1.25rem}
+h1{font-family:'Italiana',Georgia,serif;font-weight:400;font-size:clamp(3rem,13vw,9rem);line-height:.95;margin:0;letter-spacing:.01em;
+  background:linear-gradient(100deg,var(--ink) 20%,hsl(var(--h) 100% 78%) 50%,var(--ink) 80%);
+  background-size:220% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;
+  animation:sheen 6s ease-out 1 both}
+@keyframes sheen{from{background-position:100% 0}to{background-position:0 0}}
+.hero p{max-width:34ch;margin:1.5rem auto 0;color:var(--muted);font-size:1.1rem}
+.tones{margin-top:2.25rem;display:flex;gap:.6rem;flex-wrap:wrap;justify-content:center}
+button{font:inherit;color:var(--ink);background:transparent;border:1px solid var(--line);border-radius:999px;padding:.6rem 1.2rem;cursor:pointer;display:inline-flex;align-items:center;gap:.5rem;transition:background .2s,border-color .2s}
+button i{width:.8rem;height:.8rem;border-radius:50%;background:var(--c);box-shadow:0 0 12px var(--c)}
+button:hover{background:rgba(255,255,255,.08)}
+button[aria-pressed="true"]{border-color:var(--c);background:rgba(255,255,255,.1)}
+button:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
+section{max-width:46rem;margin:0 auto;padding:4.5rem 1.5rem}
+h2{font-family:'Italiana',Georgia,serif;font-weight:400;font-size:clamp(2rem,6vw,3.2rem);margin:0 0 2rem;line-height:1.1}
+.row{display:grid;grid-template-columns:1fr;gap:.35rem;padding:1.4rem 0;border-top:1px solid var(--line)}
+.row h3{margin:0;font-size:1.15rem;font-weight:600}
+.row p{margin:0;color:var(--muted);max-width:52ch}
+@media(min-width:640px){.row{grid-template-columns:12rem 1fr;gap:2rem}}
+blockquote{margin:0;padding:5rem 1.5rem;text-align:center;font-family:'Italiana',Georgia,serif;font-size:clamp(1.7rem,5vw,2.8rem);line-height:1.25;max-width:40rem;margin:0 auto}
+footer{text-align:center;color:var(--muted);padding:3rem 1.5rem 4rem;font-size:.95rem}
+@media (prefers-reduced-motion:reduce){h1{animation:none}.glow{transition:none}}
+</style>
+</head>
+<body>
+<div class="glow" aria-hidden="true"><div class="orb"></div></div>
+<main>
+  <header class="hero">
+    <h1>Radiant<br>So Beautiful</h1>
+    <p>Kecantikan bukan soal sempurna. Ini soal cahaya yang terpancar dari dalam dirimu.</p>
+    <div class="tones" role="group" aria-label="Pilih warna cahaya">
+      <button style="--c:hsl(330 95% 70%)" data-h="330" aria-pressed="true"><i></i>Mawar</button>
+      <button style="--c:hsl(42 95% 62%)" data-h="42" aria-pressed="false"><i></i>Emas</button>
+      <button style="--c:hsl(190 90% 62%)" data-h="190" aria-pressed="false"><i></i>Embun</button>
+      <button style="--c:hsl(265 90% 72%)" data-h="265" aria-pressed="false"><i></i>Senja</button>
+    </div>
+  </header>
+
+  <section>
+    <h2>Pancarkan setiap hari</h2>
+    <div class="row"><h3>Mulai dari pagi</h3><p>Segelas air, napas dalam, dan senyum pertama sebelum menyentuh ponsel.</p></div>
+    <div class="row"><h3>Rawat dengan sabar</h3><p>Kulit dan hati sama-sama butuh waktu. Konsisten lebih berharga daripada instan.</p></div>
+    <div class="row"><h3>Percaya diri</h3><p>Pakai yang membuatmu nyaman. Cahaya terbaik datang saat kamu merasa jadi dirimu sendiri.</p></div>
+  </section>
+
+  <blockquote>Kamu tidak perlu mencari cahaya. Kamu sudah membawanya.</blockquote>
+
+  <footer>Radiant So Beautiful. Gerakkan kursor atau sentuh layar untuk menggerakkan cahaya.</footer>
+</main>
+<script>
+const root=document.documentElement;
+const orb=document.querySelector('.orb');
+const still=matchMedia('(prefers-reduced-motion: reduce)').matches;
+let tx=innerWidth*.5,ty=innerHeight*.38,cx=tx,cy=ty,running=false;
+function tick(){
+  cx=tx; cy=ty;
+  orb.style.transform='translate3d('+cx.toFixed(1)+'px,'+cy.toFixed(1)+'px,0)';
+  running=false;
+}
+function move(e){
+  const p=e.touches?e.touches[0]:e;
+  tx=p.clientX; ty=p.clientY;
+  if(still){cx=tx;cy=ty}
+  if(!running){running=true;requestAnimationFrame(tick)}
+}
+addEventListener('pointermove',move,{passive:true});
+addEventListener('touchmove',move,{passive:true});
+orb.style.transform='translate3d('+cx+'px,'+cy+'px,0)';
+document.querySelectorAll('.tones button').forEach(b=>{
+  b.addEventListener('click',()=>{
+    root.style.setProperty('--h',b.dataset.h);
+    document.querySelectorAll('.tones button').forEach(x=>x.setAttribute('aria-pressed',x===b));
+  });
+});
+</script>
+</body>
+</html>
